@@ -16,6 +16,10 @@ $ composer install
 ```sh
 $ php artisan key:generate
 ```
+- 執行 __Artisan__ 指令的 __migrate__ 來執行所有未完成的遷移。
+```sh
+$ php artisan migrate
+```
 - 安裝圖片最佳化工具化，以 Ubuntu 作業系統語法：
 ```sh
 $ sudo apt-get install jpegoptim
