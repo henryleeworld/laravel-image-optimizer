@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use ImageOptimizer;
-use App\File;
+use App\Models\File;
 
-class PhotosController extends Controller {
+class uploadImagesController extends Controller {
     public function store(Request $request) {
         $this->validate($request, [
             'photo' => 'required',

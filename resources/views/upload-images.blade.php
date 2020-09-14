@@ -34,7 +34,7 @@
             @endif
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <form action="/photos" enctype="multipart/form-data" method="POST">
+                    <form action="/upload-images" enctype="multipart/form-data" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="">照片</label>

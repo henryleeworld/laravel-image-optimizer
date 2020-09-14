@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\uploadImagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,15 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('photo');
+Route::get('/upload-images', function () {
+    return view('upload-images');
 });
 
-Route::post('/photos', 'PhotosController@store');
+Route::post('/upload-images', [uploadImagesController::class, 'store']);
 
 /*
-Route::middleware('optimized')->group(function () {
+Route::middleware('optimizeImages')->group(function () {
     // all images will be optimized automatically
-    Route::post('/photos', 'PhotosController@store');
+    Route::post('upload-images', 'UploadController@index');
 });
 */
