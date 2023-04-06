@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\uploadImagesController;
+use App\Http\Controllers\ImagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -9,16 +9,15 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/upload-images', function () {
     return view('upload-images');
 });
 
-Route::post('/upload-images', [uploadImagesController::class, 'store']);
+Route::post('/upload-images', [ImagesController::class, 'store']);
 
 /*
 Route::middleware('optimizeImages')->group(function () {

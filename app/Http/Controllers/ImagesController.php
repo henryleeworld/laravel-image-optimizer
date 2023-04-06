@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use ImageOptimizer;
-use App\Models\File;
 
-class uploadImagesController extends Controller {
+class ImagesController extends Controller {
     public function store(Request $request) {
         $this->validate($request, [
             'photo' => 'required',
@@ -18,7 +18,7 @@ class uploadImagesController extends Controller {
             foreach($request->file('photo') as $file)
             {
                 $name = Str::uuid() . '.' . $file->extension();
-                $filePath = public_path(). '/files/';
+                $filePath = public_path('/files/');
                 $file->move($filePath, $name);
                 ImageOptimizer::optimize($filePath . $name);
                 $data[] = $name;
