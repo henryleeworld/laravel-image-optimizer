@@ -1,4 +1,4 @@
-# Laravel 10 圖片最佳化
+# Laravel 11 圖片最佳化
 
 引入 spatie 的 laravel-image-optimizer 套件來擴增實作將圖片最佳化，就能節省大量位元組，並提升網站的效能：瀏覽器要下載的位元組愈少，用戶端頻寬的爭用情況就越少，瀏覽器下載速度就可提升，並在螢幕上顯示實用的內容。
 
@@ -12,7 +12,7 @@ $ git clone
 ```sh
 $ composer install
 ```
-- 產⽣ Laravel 要使用的一組 32 字元長度的隨機字串 APP_KEY 並存在 .env 內。
+- 產生 Laravel 要使用的一組 32 字元長度的隨機字串 APP_KEY 並存在 .env 內。
 ```sh
 $ php artisan key:generate
 ```
@@ -34,8 +34,8 @@ $ sudo apt-get install webp
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/RaeUm9A.png)
+![](https://i.imgur.com/PWsogIR.png)
 > 將電腦上的檔案上傳
 
-![](https://i.imgur.com/lYvWLjq.png)
+![](https://i.imgur.com/KqQaOct.png)
 > 將檔案迷你化，以便縮減檔案大小
