@@ -6,16 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class File extends Model
 {
-    public $table = 'files';
-    
-    protected $dates = [
-        'created_at',
-        'updated_at',
-    ];
-
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
     protected $fillable = [
-        'filenames ',
-        'created_at',
-        'updated_at',
+        'filenames',
     ];
 }

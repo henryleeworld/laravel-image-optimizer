@@ -7,11 +7,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Spatie\ImageOptimizer\OptimizerChainFactory;
 
-class ImagesController extends Controller {
-    public function store(Request $request) {
+class ImagesController extends Controller
+{
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
         $this->validate($request, [
             'photo' => 'required',
-            'photo.*' => 'image:svg'
+            'photo.*' => 'image:allow_svg'
         ]);
         if($request->hasfile('photo'))
         {
@@ -21,7 +26,7 @@ class ImagesController extends Controller {
                 $name = Str::uuid() . '.' . $file->extension();
                 $filePath = public_path('/files/');
                 $file->move($filePath, $name);
-                $optimizerChain->optimize($filePath . $name);
+                $optimizerChain->useLogger(app('log'))->optimize($filePath . $name);
                 $data[] = $name;
             }
         }
