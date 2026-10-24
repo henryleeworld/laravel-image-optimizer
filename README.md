@@ -1,8 +1,40 @@
-# Laravel 12 圖片最佳化
+# Laravel 13 圖片最佳化
 
 引入 spatie 的 laravel-image-optimizer 套件來擴增實作將圖片最佳化，就能節省大量位元組，並提升網站的效能：瀏覽器要下載的位元組愈少，用戶端頻寬的爭用情況就越少，瀏覽器下載速度就可提升，並在螢幕上顯示實用的內容。
 
 ## 使用方式
+- 安裝圖片最佳化工具。
+> 如果是在 Ubuntu／Debian 作業系統：
+```sh
+$ sudo apt-get install jpegoptim
+$ sudo apt-get install optipng
+$ sudo apt-get install pngquant
+$ sudo npm install -g svgo
+$ sudo apt-get install gifsicle
+$ sudo apt-get install webp
+$ sudo apt-get install libavif-bin
+```
+> 如果是在電腦作業系統 MacOS，可以使用 Homebrew 來安裝：
+```sh
+$ brew install jpegoptim
+$ brew install optipng
+$ brew install pngquant
+$ npm install -g svgo
+$ brew install gifsicle
+$ brew install webp
+$ brew install libavif
+```
+> 如果是在 Fedora／RHEL／CentOS 作業系統：
+```sh
+$ sudo dnf install epel-release
+$ sudo dnf install jpegoptim
+$ sudo dnf install optipng
+$ sudo dnf install pngquant
+$ sudo npm install -g svgo
+$ sudo dnf install gifsicle
+$ sudo dnf install libwebp-tools
+$ sudo dnf install libavif-tools
+```
 - 把整個專案複製一份到你的電腦裡，這裡指的「內容」不是只有檔案，而是指所有整個專案的歷史紀錄、分支、標籤等內容都會複製一份下來。
 ```sh
 $ git clone
@@ -20,16 +52,8 @@ $ php artisan key:generate
 ```sh
 $ php artisan migrate
 ```
-- 安裝圖片最佳化工具化，以 Ubuntu 作業系統語法：
-```sh
-$ sudo apt-get install jpegoptim
-$ sudo apt-get install optipng
-$ sudo apt-get install pngquant
-$ sudo npm install -g svgo
-$ sudo apt-get install gifsicle
-$ sudo apt-get install webp
-```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
+- 你可以經由 `/upload-images` 來進行圖片上傳。
 
 ----
 
